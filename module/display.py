@@ -6,12 +6,14 @@ import cv2
 
 
 class Display:
+    """Display class for UI
+    """
     def __init__(self, n_points: int, img_path_1: str, img_path_2: str) -> None:
         self.n_points = n_points
         # store input points here
         self.points_1 = np.zeros((self.n_points, 2), dtype=int)
         self.points_2 = np.zeros((self.n_points, 2), dtype=int)
-        # reference counter of each image
+        # point counter of each image
         self._ref_cnt_img_1 = 0
         self._ref_cnt_img_2 = 0
         # dot color for each image
@@ -32,6 +34,8 @@ class Display:
             key = cv2.waitKey(1) & 0xFF
             if key == ord("q"):
                 break
+            elif self._ref_cnt_img_1 > self.n_points or self._ref_cnt_img_2 > self.n_points:
+                raise IndexError("number of input points is greater than the given limit")
             elif self._ref_cnt_img_1 == self._ref_cnt_img_2 == self.n_points:
                 break
         # finalize input
@@ -55,7 +59,7 @@ class Display:
                 img=self.window_1,
                 center=(x, y),
                 color=self.dot_color_1,
-                radius=5,
+                radius=3,
                 thickness=-1,
             )
             self._ref_cnt_img_1 += 1
@@ -68,7 +72,7 @@ class Display:
                 img=self.window_2,
                 center=(x, y),
                 color=self.dot_color_2,
-                radius=5,
+                radius=3,
                 thickness=-1,
             )
             self._ref_cnt_img_2 += 1

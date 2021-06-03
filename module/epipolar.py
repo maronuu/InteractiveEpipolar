@@ -5,13 +5,28 @@ import matplotlib.pyplot as plt
 
 
 class Epipolar:
+    """Epipolar geometry class
+    """
     def __init__(self, img_path_1: str, img_path_2: str, points_1: np.ndarray, points_2: np.ndarray) -> None:
+        """initialize
+
+        Args:
+            img_path_1 (str): path to 1st view
+            img_path_2 (str): path to 2nd view
+            points_1 (np.ndarray): input points on 1st image
+            points_2 (np.ndarray): input points on 2nd image
+        """
         self.img_path_1 = img_path_1
         self.img_path_2 = img_path_2
         self.points_1 = points_1
         self.points_2 = points_2
 
     def draw_epi_line(self, path: str) -> None:
+        """draw epiline on image and save it
+
+        Args:
+            path (str): path to result image to be saved
+        """
         # calc fundamental matrix
         self.F_mat, _ = cv2.findFundamentalMat(self.points_1, self.points_2, cv2.FM_8POINT)
         # setup base image
