@@ -52,5 +52,5 @@ A detailed explanation on Epipolar Geometry is [here](https://docs.opencv.org/3.
 Note that this implementation is using 8-points algorithm, which can solve it linearly, but it lacks a robustness.
 Actually, `output/result.png` falls short of ccurate epilines.
 For more accurate calculation,
-- Utilize extracted features to find matched points like [Flann based matcher](https://docs.opencv.org/3.4/dc/de2/classcv_1_1FlannBasedMatcher.html).
+- Utilizes extracted features to find matched points like [Flann based matcher](https://docs.opencv.org/3.4/dc/de2/classcv_1_1FlannBasedMatcher.html).
 - Gets far greater number of points (automatically).
