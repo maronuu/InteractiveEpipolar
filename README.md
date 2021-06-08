@@ -13,14 +13,14 @@ Tested on
   
 
 ## Installation
-### 1. install libralies
+### 1. install libraries
 ```
 cd ~/
 git clone https://github.com/maronuu/InteractiveEpipolar.git
 cd ~/InteractiveEpipolar
 pipenv install -r requirements.txt
 ```
-Of course, you can utilize other method than pipenv.
+Of course, you can utilize another method than pipenv.
 
 ### 2. run main.py
 ```
@@ -42,15 +42,15 @@ Input 2nd point on view_1 -> Input 2nd point on view_2 ->
 
 Input 8th point on view_1 -> Input 8th point on view_2
 
-Then, a result will be show up. It is to be saved to `InteractiveEpipolar/output/{picture_name}.png`
+Then, a result will show up. It is to be saved to `InteractiveEpipolar/output/{picture_name}.png`
 
 ![result](https://user-images.githubusercontent.com/63549742/120671200-1df68600-c4cc-11eb-9b53-fba297430e54.png)
 
 ## Description
-A detailed explanation on Epipolar Geometry is [here](https://docs.opencv.org/3.4/da/de9/tutorial_py_epipolar_geometry.html).
+A detailed explanation of Epipolar Geometry is [here](https://docs.opencv.org/3.4/da/de9/tutorial_py_epipolar_geometry.html).
 
-Note that this implementation is using 8-points algorithm, which can solve it linearly, but it lacks a robustness.
-Actually, `output/result.png` falls short of ccurate epilines.
-For more accurate calculation,
-- Utilizes extracted features to find matched points like [Flann based matcher](https://docs.opencv.org/3.4/dc/de2/classcv_1_1FlannBasedMatcher.html).
-- Gets far greater number of points (automatically).
+Note that this implementation is using an 8-points algorithm, which can solve it linearly, but it lacks robustness.
+Actually, `output/result.png` falls short of accurate epilines.
+For a more accurate calculation,
+- Utilize extracted features to find matched points like [Flann-based matcher](https://docs.opencv.org/3.4/dc/de2/classcv_1_1FlannBasedMatcher.html).
+- Get a far greater number of points (automatically).
