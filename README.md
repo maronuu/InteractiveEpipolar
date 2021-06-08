@@ -12,8 +12,8 @@ Tested on
   - opencv-python   4.5.2.52
   
 
-## Installation
-### 1. install libraries
+## Install & Run
+### 1. Install libraries
 ```
 cd ~/
 git clone https://github.com/maronuu/InteractiveEpipolar.git
@@ -22,7 +22,7 @@ pipenv install -r requirements.txt
 ```
 Of course, you can utilize another method than pipenv.
 
-### 2. run main.py
+### 2. Run main.py
 ```
 python3 main.py --img1 data/left.jpg --img2 data/right.jpg --output output/result.png [--detail]
 ```
