@@ -1,7 +1,7 @@
 # InteractiveEpipolar
 
 ## What is this?
-This is an interactive interface to experience the 8-points algorithm on Epipolar geometry.
+This is an interactive demo to experience the 8-points algorithm on Epipolar geometry.
 
 ## Requirements
 Tested on
